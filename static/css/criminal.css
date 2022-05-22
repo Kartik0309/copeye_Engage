@@ -1,0 +1,50 @@
+body{
+    background-image:url("/static/images/criminal-record-database.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+.first-form{
+    margin-top: 15%;
+    width:40vw;
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+}
+.forms{
+    display:flex;
+    flex-direction: row;
+}
+h3{
+    margin-left:200px;
+    color:white;
+}
+.form-control{
+    margin:10px;
+}
+.input-group-text{
+    color:black;
+    margin-left:40%;
+}
+.input-group-text:hover{
+    background-color:green;
+    font-weight:bold;
+}
+.second-form{
+    width:20vw;
+    margin-top: 20%;
+    margin-left:75px;
+}
+.second-form img{
+    height: 20px;
+    width: 20px;
+    margin-right: 0;
+}
+.second-form button{
+    font-weight:bold;
+    height:35px;
+    border-radius: 5px;
+}
+.second-form button:hover{
+    background-color:green;
+}
+

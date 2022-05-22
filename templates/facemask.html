@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block bodyblock %}
+    <form action="#" method="POST">
+    <button type="submit" action="#" method="POST">Start Detection</button></form>
+    {% if found %}
+          <div class="container" style="color:white;">
+                <ul>
+                    {% for x in found %}
+                        <li>{{x['name']}}<br>
+                            {{x['id']}}<br>
+                            {{x['address']}}<br>
+                            <img src="../static/uploads/citizen/{{x['id']}}.jpg">
+                        </li>
+                    {% endfor %}
+                </ul>
+          </div>
+          {% endif %}
+{% endblock %}

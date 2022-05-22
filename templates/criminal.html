@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+    {% block bodyblock %}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/criminal.css')}}">
+    <div class="container" style="align-items:justify;" id="criminal-upload">
+    <div class="forms">
+        <div class="first-form">
+            <h3>ENTER CRIMINAL DETAILS</h3>
+            <form method="POST" action="{{url_for('criminal')}}" enctype="multipart/form-data" >
+                <input name="upload" type="file" class="form-control" id="inputGroupFile02" placeholder="Upload The Image of Criminal" required>
+                <input name="upload-name" type="text" class="form-control" placeholder="Enter Criminal Name" id="inputGroupFile03" required>
+                <input name="upload-caseid" type="text" class="form-control" placeholder="Enter Case ID" id="inputGroupFile04" required>
+                <button type="submit" class="input-group-text">Upload</button>
+            </form>
+        </div>
+            <div class="second-form">   
+            <form method="POST" action="{{url_for('find_criminal')}}">
+                <img src='static/images/search-interface-symbol.png'>
+                <button type="submit">Search For Criminals</button>
+            </form>
+            </div>
+    </div>
+        {% if message|length !=0 %}
+            <p style="color:red;">{{message}}</p>
+            {% endif %}
+          {% if found %}
+          <div class="container" style="color:white;">
+                <ul>
+                    {% for x in found %}
+                        <li>{{x['name']}}<br>
+                            {{x['id']}}<br>
+                            <p>Found at:{{x['time']}}</p><br>
+                            <img src="../static/uploads/criminal/{{x['id']}}.jpg">
+                        </li>
+                    {% endfor %}
+                </ul>
+          </div>
+          {% endif %}
+      </div>
+      {%endblock%}

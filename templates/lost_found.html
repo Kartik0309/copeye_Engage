@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+    {% block bodyblock %}
+    <div class="container" style="align-items:justify;" id="criminal-upload">
+        <div class="card" style="width: 25rem;">
+            <img src="\static\images\camera.jpg" alt="criminal-upload">
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <form method="POST" action="{{url_for('lost_found')}}" enctype="multipart/form-data" >
+                        <input name="upload" type="file" class="form-control" id="inputGroupFile02" required accept="image/*">
+                        <input name="upload-name" type="text" class="form-control" placeholder="Enter the Name" id="inputGroupFile03" required>
+                        <button type="submit" class="input-group-text">Upload</button>
+                    </form>
+                </div>
+            </div>
+          </div><br><br>
+          <form method="POST" action="{{url_for('find_lost')}}">
+                <button type="submit" class="btn btn-primary">Start Search</button>
+            </form>
+          {% if val %}
+          <div class="results">
+              <div class="static-image">
+                  <img src={{path}} alt="image" width="300" height="300">
+              </div>
+              <div class="image"></div>
+          </div>
+          {% endif %}
+          {% if found %}
+          <div class="container">
+                <ul>
+                    {% for x in found %}
+                        <li>{{x}}</li>
+                    {% endfor %}
+                </ul>
+          </div>
+          {% endif %}
+      </div>
+      {%endblock%}
