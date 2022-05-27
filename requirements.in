@@ -1,0 +1,9 @@
+deepface==0.0.75
+Flask==2.1.2
+Flask_MySQLdb==1.0.1
+imutils==0.5.4
+numpy==1.22.3
+opencv_python==4.5.5.64
+pandas==1.4.2
+Pillow==9.1.1
+tensorflow==2.8.0
