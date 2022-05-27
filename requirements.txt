@@ -4,6 +4,7 @@
 #
 #    pip-compile
 #
+python==3.10
 absl-py==1.0.0
     # via
     #   tensorboard
