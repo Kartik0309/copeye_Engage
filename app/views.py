@@ -28,6 +28,7 @@ def citizen():
             image=request.files['photo']
             temp=image.filename
             image.save(os.path.join(FOLDER3,image.filename))
+            print('Hello1')
             image=cv2.imread(os.path.join(FOLDER3,image.filename))
             faces=haar.detectMultiScale(image,1.3,5)
             if len(faces)>1:

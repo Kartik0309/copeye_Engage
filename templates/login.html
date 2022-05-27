@@ -17,8 +17,13 @@
 			<div class="v3_15"></div>
 			<div class="v3_16"></div>
 			<span class="v3_18">CopEye</span>
-			<span class="v3_19">CopEye</span>
-			<span class="v3_20">For your upmost safety</span>
+			<span class="v3_19">CopEye
+				{% if message|length !=0 %}
+				<p style="font-size:15px;top: 150px;color:red;position: absolute;">{{message}}</p>
+				{% endif %}
+			</span>
+			<span class="v3_20">For your upmost safety
+			</span>
 			{%block bodyblock%}
 			<form method="post" action="{{ url_for('login') }}">
 				<button class="v3_21">Login</button>

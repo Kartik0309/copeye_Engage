@@ -297,6 +297,7 @@ body {
     width: 100px;
     height: 100px;
     background: url("/static/images/v17_217.png");
+    border-radius:20px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -466,6 +467,7 @@ body {
     width: 100px;
     height: 100px;
     background: url("/static/images/v17_229.png");
+    border-radius:20px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -624,6 +626,7 @@ body {
     width: 100px;
     height: 100px;
     background: url("/static/images/v17_241.png");
+    border-radius:20px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -755,7 +758,7 @@ body {
     color: rgba(140,239,233,1);
     position: absolute;
     top: 25vh;
-    left: 511px;
+    left: 45%;
     font-family: Poppins;
     font-weight: Regular;
     font-size: 28px;

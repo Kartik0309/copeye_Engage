@@ -43,7 +43,9 @@
           <h3 class="mb-3">Add Citizen Into Database</h3>
           <p>Add the citizen into the database to allow face detection.</p>
           <p>By adding data of citizens into the database would allow the software to detect citizens by our various features through face detection.</p>
-          
+                {% if message|length !=0 %}
+                <p style="color:red;margin-top:200px;font-size:20px;">{{message}}</p>
+                {% endif %}
         </div>
 
         <div class="col-md-6">
@@ -75,7 +77,7 @@
                   <button type="submit" value="Upload Citizen" class="btn btn-block btn-primary rounded-0 py-2 px-4">Add Citizen</button>
                 </div>
               </div>
-              </div>
+  
                 
             </form>
 

@@ -106,7 +106,7 @@ def mask_detect():
 	# initialize the video stream and allow the camera sensor to warm up
 	print("[INFO] starting video stream...")
 	vs = cv2.VideoCapture(0)
-	found=list(dict())
+	found=set()
 	# loop over the frames from the video stream
 	while True:
 		# grab the frame from the threaded video stream and resize it
@@ -136,18 +136,12 @@ def mask_detect():
 				for x,y,w,h in faces:
 					face=frame[y:y+w,x:x+h]
 					face=np.array(face)
-					cur=mysql.connection.cursor()
 					for i in os.listdir('static/uploads/citizen'):
 						last=i.split('.')[-1]
 						first=i.split('.')[0]
 						df=DF.verify(img1_path=face,img2_path=os.path.join('static/uploads/citizen',i),enforce_detection=False,model_name='VGG-Face')
 						if df['verified'] and df['distance']<0.3147:
-							cur.execute("Select * from citizen where cid='{}';".format(first))
-							cnt=cur.fetchone()
-							temp={'id':cnt[0],'name':cnt[1],'age':cnt[2],'address':cnt[3]}
-							if len(found)==0 or found[-1]['id']!=temp['id']:
-								found.append(temp)
-					cur.close()
+							found.add(first)					
 
 
 			# include the probability in the label
@@ -168,10 +162,19 @@ def mask_detect():
 			break
 
 	# do a bit of cleanup
+	nfound=list(dict())
+	cur=mysql.connection.cursor()
+	for j in found:
+		cur.execute("Select * from citizen where cid='{}';".format(j))
+		cnt=cur.fetchone()
+		temp={'id':cnt[0],'name':cnt[1],'age':cnt[2],'address':cnt[3]}
+		nfound.append(temp)
+	cur.close()
+
 	cv2.destroyAllWindows()
 	vs.release()
 	print(found)
 
-	return found
+	return nfound
 
 

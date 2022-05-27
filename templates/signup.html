@@ -14,6 +14,9 @@
             <input class="v11_40" type="text" name="name" autocomplete="off" required><span class="v11_46">UserName</span>
             <input class="v11_41" type="email" name="email" autocomplete="off" required><span class="v11_47">Email</span>
             <button class="v11_42" type="submit">Signup Using Face ID</button>
+            {% if message|length !=0 %}
+            <p class="v11_42" style="color:red;">{{message}}</p>
+            {% endif %}
         </form>
         </div>
     </div>

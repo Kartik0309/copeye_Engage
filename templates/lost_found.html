@@ -44,6 +44,9 @@
           <p>This feature allows to search for criminals which are fed into the Database with the help of live cameras.</p>
           <p>Clicking the button given below will start searching for the criminals and if any criminal is found then it will be displayed on the next page with available details and time of detection</p>
           <p>Click the button below to start the search!!</p>
+          {% if message|length !=0 %}
+            <p style="color:red;">{{message}}</p>
+          {% endif %}
           <div class="col-md-12">
             <form method="post" action="{{url_for('find_lost')}}">
             <button type="submit" value="Find Missing People" class="btn btn-block btn-primary rounded-0 py-2 px-4">Find Missing People</button>
