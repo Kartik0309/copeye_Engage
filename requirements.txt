@@ -18,6 +18,7 @@ click==8.0.4
 cmake==3.22.4
 colorama==0.4.4
 cycler==0.11.0
+dlib
 debugpy==1.6.0
 decorator==5.1.1
 deepface==0.0.75

@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: rgba(11,19,33,1);
+	font-family: "Roboto", sans-serif;
+	display: flex;
+	height: 100vh;
+}
+
+.hero-container {
+	margin: auto;
+	display: flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly; 
+    flex-direction: row;
+}
+img.poster{
+    height:261px;
+}
+.main-container {
+	width: 270px;
+	height: 540px;
+	position: relative;
+	margin: 0 20px;
+    margin-top:150px;
+}
+
+.poster-container {
+	width: 230px;
+	position: absolute;
+	top: 0;
+	left: 20px;
+	z-index: 9999;
+}
+
+.poster {
+	width: 100%;
+	box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+}
+
+.ticket-container {
+	background: #fff;
+	width: 270px;
+	height: 410px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 5px;
+	position: absolute;
+	top: 20px;
+	box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+}
+
+.ticket__content {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+}
+
+.ticket__movie-title {
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+
+
+.ticket__current-price {
+	margin-bottom:20px;
+}
+
+.ticket__old-price {
+	color: #999;
+	text-decoration: line-through;
+	margin-bottom: 10px;
+}
+
+.ticket__buy-btn {
+	cursor: pointer;
+	width: 100%;
+	background: #2f2f2f;
+	color: white;
+	padding: 15px 0;
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 0;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+
+
+.v17_220:hover{
+    background-color:white;
+    margin:0;
+  }
+  .v17_244:hover{
+    background-color:white;
+    margin:0;
+  }
+  .v17_232:hover{
+    background-color:white;
+    margin:0;
+  }
+  .v17_199:hover{
+    background-color: black;
+}
+.v17_205:hover{       
+  background-color:white;
+  cursor: pointer;
+}
+  .v17_197 {
+    width: 100%;
+    height: 100vh;
+    background: rgba(11,19,33,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v17_198 {
+    width: 100%;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v17_199 {
+    color:white;
+    width: 147px;
+    height: 56px;
+    background:black;
+    opacity: 1;
+    position: absolute;
+    top: 41px;
+    left: 20vw;
+    border: 2px solid rgba(255,255,255,1);
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    overflow: hidden;
+  }
+  .v17_200 {
+    width: 147px;
+    height: 56px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 41px;
+    left: 293px;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    overflow: hidden;
+  }
+  .v17_201 {
+    width: 147px;
+    height: 56px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 41px;
+    left: 40vw;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    overflow: hidden;
+  }
+  .v17_202 {
+    width: 147px;
+    height: 56px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 41px;
+    left: 40vw;
+    border: 2px solid rgba(255,255,255,1);
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    overflow: hidden;
+  }
+  .v17_203 {
+    width: 146px;
+    height: 56px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 41px;
+    left: 60vw;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    overflow: hidden;
+  }
+  .v17_204 {
+    width: 146px;
+    height: 56px;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 41px;
+    left: 60vw;
+    border: 2px solid rgba(255,255,255,1);
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    overflow: hidden;
+  }
+  .v17_205 {
+    width: 150px;
+    height: 50px;
+    background: rgba(140,239,233,1);
+    opacity: 1;
+    position: absolute;
+    top: 75px;
+    left: 82%;
+    border: 2px solid rgba(140,239,233,1);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    overflow: hidden;
+  }
+  
+  .v17_246 {
+    width: 136px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 43px;
+    left: 41px;
+    font-family: Poppins;
+    font-weight: bolder;
+    font-size: 35px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v17_247 {
+    width: 45px;
+    color:white(0,0,0,1);
+    position: absolute;
+    top: 2vh;
+    left: 3vw;
+    font-family: Poppins;
+    font-weight: Regular;
+    font-size: 15px;
+    opacity: 1;
+    text-align: center;
+  }
+  .v17_199:hover{
+      background-color: black;
+  }
+  .v17_248 {
+    width: 85px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    left:3.5vh;
+    top:1vw;
+    font-family: Poppins;
+    font-weight: Regular;
+    font-size: 15px;
+    opacity: 1;
+    text-align: center;
+  }
+  .v17_249 {
+    width: 63px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    left:5vh;
+    top:0.9vw;
+    font-family: Poppins;
+    font-weight: Regular;
+    font-size: 15px;
+    opacity: 1;
+    text-align: center;
+  }
+  
+  .v17_250 {
+    color: rgba(140,239,233,1);
+    position: absolute;
+    top: 30px;
+    left: 80%;
+    font-family: Poppins;
+    font-weight: Regular;
+    font-size: 19px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v17_251 {
+    color: rgba(11,19,33,1);
+    position: absolute;
+    top: 28%;
+    left:28%;
+    font-family: Questrial;
+    font-weight: Regular;
+    font-size: 18px;
+    opacity: 1;
+    text-align: center;
+  }
+  .v17_205:hover{       
+    background-color:white;
+    cursor: pointer;
+  }

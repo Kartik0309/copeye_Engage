@@ -1,19 +1,43 @@
-{% extends 'index.html' %}
-
-{% block bodyblock %}
-    <form action="#" method="POST">
-    <button type="submit" action="#" method="POST">Start Detection</button></form>
-    {% if found %}
-          <div class="container" style="color:white;">
-                <ul>
-                    {% for x in found %}
-                        <li>{{x['name']}}<br>
-                            {{x['id']}}<br>
-                            {{x['address']}}<br>
-                            <img src="../static/uploads/citizen/{{x['id']}}.jpg">
-                        </li>
-                    {% endfor %}
-                </ul>
-          </div>
-          {% endif %}
-{% endblock %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet" />
+        <link href="/static/css/facemask.css" rel="stylesheet" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="v31_3">
+            <div class="v26_20"></div>
+            <div class="v26_19">
+                <div class="v17_197"></div>
+        <div class="v17_198"></div>
+		<div class="v17_199"></div>
+		<div class="v17_200"></div>
+		<div class="v17_201"></div>
+		<div class="v17_202"></div>
+		<div class="v17_203"></div>
+		<div class="v17_204"></div>
+		<div class="v17_205"></div>
+        <span class="v17_246">CopEye</span>
+		<a class="v17_199" href="{{url_for('index')}}"><span class="v17_247">Home</span></a>
+		<a class="v17_202" href="{{url_for('citizen')}}"><span class="v17_248">Add Citizen</span></a>
+		<a class="v17_204" href="{{url_for('about_us')}}"><span class="v17_249">AboutUs</span></a>
+    {%if session['name'] %}
+		<span class="v17_250"><span class='name' style="color:white;">Welcome</span> {{session['name']}}</span>
+    {%endif %}
+    <a class="v17_205" href="{{url_for('login')}}"><span class="v17_251">Log Out</span></a>
+            </div>
+            <span class="v26_91">This feature would allow the user to detect mask and generate challan for the citizens who are not wearing the mask using face detection technology.</span>
+            <div class="v27_3">
+                <div class="v26_65"></div>
+                <form method="post" action="#">
+                <button class="v26_65" type="submit"><span class="v26_79">Start Detection</span></button>
+                </form>
+                </div>
+                <div class="v31_7"></div>
+            </div>
+        </body>
+        </html>

@@ -22,6 +22,12 @@ app.add_url_rule('/lost_found','lost_found',views.lost_found,methods=['GET', 'PO
 app.add_url_rule('/signup','signup',views.signup,methods=['GET', 'POST'])
 app.add_url_rule('/citizen','citizen',views.citizen,methods=['GET', 'POST'])
 app.add_url_rule('/find_lost','find_lost',views.find_lost,methods=['GET', 'POST'])
+app.add_url_rule('/about_us','about_us',views.about_us,methods=['GET', 'POST'])
+app.add_url_rule('/result_criminal','result_criminal',views.result_criminal,methods=['GET', 'POST'])
+app.add_url_rule('/result_facemask','result_facemask',views.result_facemask,methods=['GET', 'POST'])
+app.add_url_rule('/result_lostfound','result_lostfound',views.result_lostfound,methods=['GET', 'POST'])
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

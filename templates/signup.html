@@ -1,19 +1,21 @@
-{% extends 'login.html' %}
-{%block bodyblock%}
-<link rel="stylesheet" href="{{url_for('static',filename='css/signup.css')}}">
-<div class="card">
-    <div class="card-header">
-        <h3>Sign Up</h3>
-    </div>
-    <div class="card-body">
-        {% if message|length !=0 %}
-        <p style="color:red;">{{message}}</p>
-        {% endif %}
-        <form method="POST" action="{{url_for('signup')}}">
-            <input class="input-group-prepend" type="text" name="name" placeholder="Enter username" autocomplete="off" required>
-            <input class="input-group-prepend" type="email" name="email" placeholder="Enter Email Id" placeholder="Enter Email" autocomplete="off" required>
-            <button class="signup_btn" type="submit">Signup Using Face ID</button>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+        <link href="/static/css/signup_new.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="v11_50">
+        <div class="v11_37">
+            <a class='v11_44' href="{{url_for('login')}}">CopEye</a>
+            <span class="v11_45">Sign Up!</span>
+            <form class="my-form" method="POST" action="{{url_for('signup')}}">
+            <input class="v11_40" type="text" name="name" autocomplete="off" required><span class="v11_46">UserName</span>
+            <input class="v11_41" type="email" name="email" autocomplete="off" required><span class="v11_47">Email</span>
+            <button class="v11_42" type="submit">Signup Using Face ID</button>
         </form>
+        </div>
     </div>
-</div>
-{%endblock %}
+</body>
+</html>

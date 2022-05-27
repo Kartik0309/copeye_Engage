@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet" />
+<link href="/static/css/about_us.css" rel="stylesheet" />
+<title>Document</title>
+</head>
+<body>
+<div class="v23_66">
+    <div class="v17_197"></div>
+        <div class="v17_198"></div>
+		<div class="v17_199"></div>
+		<div class="v17_200"></div>
+		<div class="v17_201"></div>
+		<div class="v17_202"></div>
+		<div class="v17_203"></div>
+		<div class="v17_204"></div>
+		<div class="v17_205"></div>
+        <span class="v17_246">CopEye</span>
+		<a class="v17_199" href="{{url_for('index')}}"><span class="v17_247">Home</span></a>
+		<a class="v17_202" href="{{url_for('citizen')}}"><span class="v17_248">Add Citizen</span></a>
+		<a class="v17_204" href="{{url_for('about_us')}}"><span class="v17_249">AboutUs</span></a>
+    {%if session['name'] %}
+		<span class="v17_250"><span class='name' style="color:white;">Welcome</span> {{session['name']}}</span>
+    {%endif %}
+    <a class="v17_205" href="{{url_for('login')}}"><span class="v17_251">Log Out</span></a>
+<div class="v23_70">
+<div class="v23_68">
+<div class="v23_25"></div>
+<div class="v23_27"></div>
+<div class="v23_28"></div>
+<span class="v23_43">Hello, I am</span>
+<span class="v23_44">Kartik Chauhan</span>
+<span class="v23_45">The Coder Of CopEye</span>
+</div>
+<div class="v23_69">
+<a href="#v23_29">↓</a></div></div>
+<div class="v23_71">
+<div class="v23_29" id="v23_29"></div>
+<div class="v23_30"></div>
+<div class="v23_31"></div>
+<div class="v23_32"></div>
+<span class="v23_46">About Us</span>
+<span class="v23_47">A Designer who loves to build simple and beautiful things</span>
+<span class="v23_48">Hello, I am currently a second year student at D.T.U(Delhi Technological University) and I have made this project under the Microsoft Engage Program'22.This project has been built under the track of face recongniton and it focuses on improving the security of our country with the help of computer vision. </span>
+<span class="v23_49">This Project has its backend built in Python Flask framework and it uses HTML and CSS in the frontend.The database used for this project is MySQL. </span>
+<span class="v23_50">Socials</span>
+<span class="v23_51">LinkedIn</span>
+<span class="v23_52">Thirty-four years before the birth of this magazine, the Danish philosopher Kierkegaard in guer-reotype,” he observed, “everyone will be able to have their port-rait taken—formierly it was only the prominent.”</span>
+</div>
+</div>
+</body>
+</html>

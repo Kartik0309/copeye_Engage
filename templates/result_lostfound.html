@@ -1,0 +1,44 @@
+<head>
+	<link rel="stylesheet" href="/static/css/result.css"/>
+</head>
+<body>
+	<div class="nav">
+		<div class="v17_197"></div>
+        <div class="v17_198"></div>
+		<div class="v17_199"></div>
+		<div class="v17_200"></div>
+		<div class="v17_201"></div>
+		<div class="v17_202"></div>
+		<div class="v17_203"></div>
+		<div class="v17_204"></div>
+		<div class="v17_205"></div>
+        <span class="v17_246">CopEye</span>
+		<a class="v17_199" href="{{url_for('index')}}"><span class="v17_247">Home</span></a>
+		<a class="v17_202" href="{{url_for('citizen')}}"><span class="v17_248">Add Citizen</span></a>
+		<a class="v17_204" href="{{url_for('about_us')}}"><span class="v17_249">AboutUs</span></a>
+    {%if session['name'] %}
+		<span class="v17_250"><span class='name' style="color:white;">Welcome</span> {{session['name']}}</span>
+    {%endif %}
+    <a class="v17_205" href="{{url_for('login')}}"><span class="v17_251">Log Out</span></a>
+	</div>
+	{%if found%}
+	<div class="hero-container">
+	{%for x in found %}
+		<div class="main-container">
+			<div class="poster-container">
+				<a href="#"><img src="../static/uploads/citizen/{{x['id']}}.jpg" class="poster" /></a>
+			</div>
+			<div class="ticket-container">
+				<div class="ticket__content">
+					<h4 class="ticket__movie-title">Citizen Name: {{x['name']}}</h4>
+					<p class="ticket__movie-slogan">Citizen ID: {{x['id']}}</p>
+					<p class="ticket__current-price">Citizen Age: {{x['age']}}</p>
+                    <p class="ticket__current-price">Citizen Address: {{x['address']}}</p>
+					<p class="ticket__buy-btn">Citizen Found</p>
+				</div>
+			</div>
+		</div>
+	{%endfor %}
+	</div>
+	{%endif%}
+</body>

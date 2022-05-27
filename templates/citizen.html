@@ -1,21 +1,87 @@
-{% extends "index.html" %}
-{%block bodyblock%}
-<link rel="stylesheet" href="{{url_for('static',filename='css/citizen.css')}}">
-<div class="card">
-    <div class="card-header">
-        <h3>Add Citizen Details</h3>
-    </div>
-    <div class="card-body">
-        {% if message|length !=0 %}
-        <p style="color:red;">{{message}}</p>
-        {% endif %}
-        <form method="post" action="{{url_for('citizen')}}" enctype="multipart/form-data">
-            <input class="input-group-prepend" type="text" name="name" placeholder="Enter Citizen Name" autocomplete="off" required>
-            <input class="input-group-prepend" type="integer" name="age" placeholder="Enter Age of Citizen"  autocomplete="off" required>
-            <input class="input-group-prepend" type="text" name="address" placeholder="Enter Address of Citizen" autocomplete="off" required>
-            <input class="input-group-prepend" type="file" name="photo" accept="image/*" required>
-            <button class="signup_btn" type="submit">Submit Details</button>
-        </form>
-    </div>
-</div>
-{%endblock%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="/static/css/citizen_new.css">
+
+    <title>Criminal Section</title>
+  </head>
+  <body>
+    <div class="v17_197"></div>
+    <div class="v17_198"></div>
+    <div class="v17_199"></div>
+    <div class="v17_200"></div>
+    <div class="v17_201"></div>
+    <div class="v17_202"></div>
+    <div class="v17_203"></div>
+    <div class="v17_204"></div>
+    <div class="v17_205"></div>
+    <span class="v17_246">CopEye</span>
+    <a class="v17_199" href="{{url_for('index')}}"><span class="v17_247">Home</span></a>
+    <a class="v17_202" href="{{url_for('citizen')}}"><span class="v17_248">Add Citizen</span></a>
+    <a class="v17_204" href="{{url_for('about_us')}}"><span class="v17_249">AboutUs</span></a>
+    {%if session['name'] %}
+    <span class="v17_250"><span class='name' style="color:white;">Welcome</span> {{session['name']}}</span>
+    {%endif %}
+    <a class="v17_205" href="{{url_for('login')}}"><span class="v17_251">Log Out</span></a>
+    <div class="content">
+    
+    <div class="container full">
+      <div class="row">
+        <div class="col-md-5 mr-auto">
+          <h3 class="mb-3">Add Citizen Into Database</h3>
+          <p>Add the citizen into the database to allow face detection.</p>
+          <p>By adding data of citizens into the database would allow the software to detect citizens by our various features through face detection.</p>
+          
+        </div>
+
+        <div class="col-md-6">
+          <div class="box">
+            <h3 class="heading">Enter Citizen Details in Database</h3>
+            <form class="mb-5" action="{{url_for('citizen')}}" method="post" id="contactForm" name="contactForm" enctype="multipart/form-data">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="name" class="col-form-label">Name *</label>
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Citizen Name" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="name" class="col-form-label">Age *</label>
+                  <input type="text" class="form-control" name="age" id="organization" placeholder="Age" required>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="name" class="col-form-label">Address *</label>
+                    <input type="text" class="form-control" name="address" id="organization" placeholder="Address" required>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="Image of Criminal" class="col-form-label">Citizen Image*</label>
+                  <input type="file" class="form-control" name="photo" id="email" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <button type="submit" value="Upload Citizen" class="btn btn-block btn-primary rounded-0 py-2 px-4">Add Citizen</button>
+                </div>
+              </div>
+              </div>
+                
+            </form>
+
+          </div>
+        </div>
+      </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .v4_29 {
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v3_9 {
+    width: 100%;
+    height: 100vh;
+    background: rgba(11,19,33,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid rgba(0,0,0,1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }
+  .v3_10 {
+    width: 100%;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v3_11 {
+    width: 100%;
+    height: 100vh;
+    background: rgba(11,19,33,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v3_12 {
+    width: 100%;
+    height: 100vh;
+    background: url("/static/images/login-page.jpeg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v3_13 {
+    width: 499px;
+    height: 228px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 213px;
+    left: 1200px;
+    overflow: hidden;
+  }
+  .v3_14 {
+    width: 499px;
+    height: 228px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 213px;
+    left: 1200px;
+    overflow: hidden;
+  }
+  .v3_15 {
+    width: 150px;
+    height: 50px;
+    background: rgba(140,239,233,1);
+    opacity: 1;
+    position: absolute;
+    top: 391px;
+    left: 1000px;
+    border: 2px solid rgba(140,239,233,1);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    overflow: hidden;}
+  .v3_21:hover,.v3_22:hover{
+    background-color:white;
+    cursor: pointer;
+  }
+  .v3_16 {
+    width: 150px;
+    height: 50px;
+    background: rgba(140,239,233,1);
+    opacity: 1;
+    position: absolute;
+    top: 391px;
+    left: 1180px;
+    border: 2px solid rgba(140,239,233,1);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    overflow: hidden;
+  }
+  .v3_18 {
+    width: 136px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 49px;
+    left: 140px;
+    font-family: Poppins;
+    font-weight: bolder;
+    font-size: 35px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v3_19 {
+    width: 331px;
+    color: rgba(163,238,233,1);
+    position: absolute;
+    position: absolute;
+    top: 195px;
+    left: 1000px;
+    font-family: Poppins;
+    font-weight: Regular;
+    font-size: 87px;
+    opacity: 1;
+    text-align: right;
+  }
+  .v3_20 {
+    width: 193px;
+    color: rgba(139,149,166,1);
+    position: absolute;
+    top: 320px;
+    left: 1145px;
+    font-family: Questrial;
+    font-weight: Regular;
+    font-size: 18px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v3_21 {
+    width:150px;
+    height:50px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    color: rgba(11,19,33,1);
+    position: absolute;
+    top: 391px;
+    left: 1000px;
+    font-family: Questrial;
+    font-weight: Regular;
+    font-size: 15px;
+    opacity: 1;
+    text-align: center;
+    background:none;
+    border: none;
+  }
+  .v3_22 {
+    width:150px;
+    height:50px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    color: rgba(11,19,33,1);
+    position: absolute;
+    top: 391px;
+    left: 1180px;
+    font-family: Questrial;
+    font-weight: Regular;
+    font-size: 15px;
+    opacity: 1;
+    text-align: center;
+    background:none;
+    border: none;
+  }

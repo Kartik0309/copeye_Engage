@@ -140,8 +140,8 @@ def mask_detect():
 					for i in os.listdir('static/uploads/citizen'):
 						last=i.split('.')[-1]
 						first=i.split('.')[0]
-						df=DF.verify(img1_path=face,img2_path=os.path.join('static/uploads/citizen',i),enforce_detection=False,model_name='Dlib')
-						if df['verified']:
+						df=DF.verify(img1_path=face,img2_path=os.path.join('static/uploads/citizen',i),enforce_detection=False,model_name='VGG-Face')
+						if df['verified'] and df['distance']<0.3147:
 							cur.execute("Select * from citizen where cid='{}';".format(first))
 							cnt=cur.fetchone()
 							temp={'id':cnt[0],'name':cnt[1],'age':cnt[2],'address':cnt[3]}

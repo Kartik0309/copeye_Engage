@@ -1,28 +1,90 @@
-{% extends 'index.html' %}
-    {% block bodyblock %}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/criminal.css')}}">
-    <div class="container" style="align-items:justify;" id="criminal-upload">
-    <div class="forms">
-        <div class="first-form">
-            <h3>ENTER CRIMINAL DETAILS</h3>
-            <form method="POST" action="{{url_for('criminal')}}" enctype="multipart/form-data" >
-                <input name="upload" type="file" class="form-control" id="inputGroupFile02" placeholder="Upload The Image of Criminal" required>
-                <input name="upload-name" type="text" class="form-control" placeholder="Enter Criminal Name" id="inputGroupFile03" required>
-                <input name="upload-caseid" type="text" class="form-control" placeholder="Enter Case ID" id="inputGroupFile04" required>
-                <button type="submit" class="input-group-text">Upload</button>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="/static/css/criminal_new.css">
+
+    <title>Criminal Section</title>
+  </head>
+  <body>
+  
+    <div class="v17_197"></div>
+    <div class="v17_198"></div>
+    <div class="v17_199"></div>
+    <div class="v17_200"></div>
+    <div class="v17_201"></div>
+    <div class="v17_202"></div>
+    <div class="v17_203"></div>
+    <div class="v17_204"></div>
+    <div class="v17_205"></div>
+    <span class="v17_246">CopEye</span>
+    <a class="v17_199" href="{{url_for('index')}}"><span class="v17_247">Home</span></a>
+    <a class="v17_202" href="{{url_for('citizen')}}"><span class="v17_248">Add Citizen</span></a>
+    <a class="v17_204" href="{{url_for('about_us')}}"><span class="v17_249">AboutUs</span></a>
+    {%if session['name'] %}
+    <span class="v17_250"><span class='name' style="color:white;">Welcome</span> {{session['name']}}</span>
+    {%endif %}
+    <a class="v17_205" href="{{url_for('login')}}"><span class="v17_251">Log Out</span></a>
+    <div class="content">
+    
+    <div class="container full">
+      <div class="row">
+        <div class="col-md-5 mr-auto">
+          <h3 class="mb-3">Criminal Detection</h3>
+          <p>This feature allows to search for criminals which are fed into the Database with the help of live cameras.</p>
+          <p>Clicking the button given below will start searching for the criminals and if any criminal is found then it will be displayed on the next page with available details and time of detection</p>
+          <p>Click the button below to start the search!!</p>
+          <div class="col-md-12">
+            <form method="post" action="{{url_for('find_criminal')}}">
+            <input type="submit" value="Search Criminal" class="btn btn-block btn-primary rounded-0 py-2 px-4">
             </form>
+          </div>
+          
         </div>
-            <div class="second-form">   
-            <form method="POST" action="{{url_for('find_criminal')}}">
-                <img src='static/images/search-interface-symbol.png'>
-                <button type="submit">Search For Criminals</button>
+
+        <div class="col-md-6">
+          <div class="box">
+            <h3 class="heading">Enter Criminal Details in Database</h3>
+            <form class="mb-5" method="post" id="contactForm" name="upload" enctype="multipart/form-data">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="name" class="col-form-label">Name *</label>
+                  <input type="text" class="form-control" name="upload-name" id="name" placeholder="Criminal name" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="name" class="col-form-label">Case ID *</label>
+                  <input type="text" class="form-control" name="upload-caseid" id="organization" placeholder="Case ID">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="Image of Criminal" class="col-form-label">Criminal Image *</label>
+                  <input type="file" class="form-control" name="upload" id="email" required>
+                </div>
+              </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <form method="post" action="{{url_for('criminal')}}">
+                  <button type="submit" value="Upload Criminal" class="btn btn-block btn-primary rounded-0 py-2 px-4">Upload Criminal</button>
+                  </form>
+                </div>
+              </div>
             </form>
-            </div>
-    </div>
-        {% if message|length !=0 %}
-            <p style="color:red;">{{message}}</p>
-            {% endif %}
-          {% if found %}
+            {% if found %}
           <div class="container" style="color:white;">
                 <ul>
                     {% for x in found %}
@@ -35,5 +97,10 @@
                 </ul>
           </div>
           {% endif %}
+
+          </div>
+        </div>
       </div>
-      {%endblock%}
+  </div>
+  </body>
+</html>

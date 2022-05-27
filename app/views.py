@@ -1,4 +1,4 @@
-from flask import render_template,request,redirect,session,abort
+from flask import render_template,request,redirect,session,abort,Response
 from flask_session import Session
 from deepface import DeepFace as DF
 import cv2
@@ -16,7 +16,6 @@ FOLDER1='static/uploads/criminal'
 FOLDER2='static/uploads/auth'
 FOLDER3='static/uploads/temp'
 mysql=MySQL()
-
 def citizen():
     message=""
     if request.method == 'POST':
@@ -38,7 +37,7 @@ def citizen():
                 message="No Face Detected"
                 raise Exception("No Face")
             for x,y,w,h in faces:
-                image=image[y:y+w,x:x+h]
+                image=image[y-20:y+h+20,x-20:x+w+20]
                 image = im.fromarray(image)
             cur=mysql.connection.cursor()
             cur.execute("INSERT INTO citizen(name,age,address) values ('{}','{}','{}');".format(name,age,address))
@@ -56,7 +55,6 @@ def citizen():
             mysql.connection.rollback()
             message="Citizen Not Added!"
     return render_template('citizen.html',message=message)
-
 
 
 
@@ -82,7 +80,7 @@ def signup():
                 cv2.imshow('frame',frame)
                 faces=haar.detectMultiScale(frame,1.3,5)
                 for x,y,w,h in faces:
-                    face=frame[y:y+h,x:x+w]
+                    face=frame[y-20:y+h+20,x-20:x+w+20]
                     #face=np.array(face)
                     face = im.fromarray(face)
                     print("Hello2")
@@ -140,7 +138,6 @@ def login():
         session.pop('name')
     return render_template('login.html',message=message)
 
-
 def index():
     return render_template('index.html')
 
@@ -169,7 +166,7 @@ def find_criminal():
                         found.append(temp)
         if nframe>=25:
             break           
-        if cv2.waitKey(50)==27:
+        if cv2.waitKey(1)==27:
             break
     cv2.destroyAllWindows()
     vid.release()
@@ -178,7 +175,17 @@ def find_criminal():
         cur.execute("select name from criminal where caseid='{}';".format(x['id']))
         x['name']=cur.fetchone()[0]
     cur.close()
-    return render_template('criminal.html',found=found)
+    print(found)
+    return render_template('result_criminal.html',found=found)
+
+def result_criminal():
+    return render_template('result_criminal.html',found=None)
+
+def result_facemask():
+    return render_template('result_facemask.html',found=None)
+
+def result_lostfound():
+    return render_template('result_lostfound.html',found=None)
 
 def criminal():
     message=""
@@ -202,6 +209,7 @@ def facemask():
     found=None
     if request.method == 'POST':
         found=detect_mask_video.mask_detect()
+        return render_template('result_facemask.html',found=found)
     return render_template('facemask.html',found=found)
 
 def find_lost():
@@ -217,7 +225,6 @@ def find_lost():
         val,frame=vid.read()
         if not val:
             continue
-        cv2.imshow('frame',frame)
         faces=haar.detectMultiScale(frame,1.3,5)
         nframe+=1
         for x,y,w,h in faces:
@@ -233,7 +240,8 @@ def find_lost():
                     temp={'id':cnt[0],'name':cnt[1],'age':cnt[2],'address':cnt[3]}
                     if len(found)==0 or found[-1]['id']!=temp['id']:
                         found.append(temp)
-        if nframe>=25:
+        cv2.imshow('frame',frame)
+        if nframe>=1000:
             break           
         if cv2.waitKey(50)==27:
             break
@@ -241,7 +249,7 @@ def find_lost():
     mysql.connection.commit()
     cv2.destroyAllWindows()
     vid.release()
-    return render_template('lost_found.html',found=found)
+    return render_template('result_lostfound.html',found=found)
 
 def lost_found():
     if request.method=='POST':
@@ -266,3 +274,6 @@ def lost_found():
             mysql.connection.commit()
         return render_template('lost_found.html',val=True,path=path,found=None)   
     return render_template('lost_found.html',val=False,path=None,found=None)
+
+def about_us():
+    return render_template('about_us.html')
