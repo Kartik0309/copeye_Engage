@@ -1,5 +1,4 @@
 from flask import render_template,request,redirect,session,abort,Response
-from flask_session import Session
 from deepface import DeepFace as DF
 import cv2
 import os
