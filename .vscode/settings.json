@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/4bdf8d2d-752d-44f1-8322-0aa9d21e27cb/microsoft.web/sites/subscriptions/4bdf8d2d-752d-44f1-8322-0aa9d21e27cb/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/copeye",
+    "appService.deploySubpath": "."
+}
