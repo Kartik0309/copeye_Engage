@@ -420,7 +420,7 @@ body {
     background-size: cover;
     opacity: 1;
     position: absolute;
-    top: 35vh;
+    top: 37vh;
     left: 471px;
     overflow: hidden;
   }
@@ -758,7 +758,7 @@ body {
     color: rgba(140,239,233,1);
     position: absolute;
     top: 25vh;
-    left: 45%;
+    left: 500px;
     font-family: Poppins;
     font-weight: Regular;
     font-size: 28px;
@@ -873,4 +873,7 @@ body {
     opacity: 1;
     text-align: center;
   }
-  
+  .tag{
+    position: absolute;
+    left:180px;
+  }

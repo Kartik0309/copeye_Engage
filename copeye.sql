@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2022 at 11:29 AM
+-- Generation Time: May 28, 2022 at 11:44 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -41,13 +41,8 @@ CREATE TABLE `citizen` (
 --
 
 INSERT INTO `citizen` (`cid`, `name`, `age`, `address`, `wanted`, `lost`) VALUES
-(7, 'Alia', 27, 'Mumbai', 0, 0),
-(8, 'Emma', 40, 'UK', 0, 0),
-(9, 'Selena', 45, 'Washington', 0, 0),
-(10, 'Priyanka', 40, 'Delhi', 0, 0),
-(11, 'Devansh', 15, 'SRE', 0, 0),
-(12, 'Kartik', 20, 'Ind', 0, 0),
-(13, 'Kartik', 21, 'Vaishali', 0, 0);
+(15, 'Priyanka Chopra', 30, 'U.S.A', 0, 0),
+(18, 'Emma Watson', 32, 'UK', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -66,21 +61,7 @@ CREATE TABLE `criminal` (
 --
 
 INSERT INTO `criminal` (`crid`, `name`, `caseid`) VALUES
-(5, 'Tony', '12'),
-(8, 'Kartik', '101'),
-(9, 'selena', '1'),
-(10, 'priyanka', '2'),
-(11, 'alia', '3'),
-(12, 'chris', '4'),
-(13, 'taylor', '5'),
-(14, 'rdj', '6'),
-(15, 'elizabeth', '7'),
-(16, 'scar', '8'),
-(17, 'harry', '9'),
-(18, 'emma', '10'),
-(19, 'Johny', '1021'),
-(20, 'kdba', '10292'),
-(21, 'adkabdkbka', '10192');
+(22, 'Chris', '102');
 
 -- --------------------------------------------------------
 
@@ -99,9 +80,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `email`, `uid`) VALUES
-('Kartik Chauhan', 'kartik@123.com', 39),
-('devansh', 'devanshchauhan8077@gmail.com', 40),
-('Kartik', 'abc@g.com', 41);
+('Kartik Chauhan', 'kartik@test.com', 46);
 
 --
 -- Indexes for dumped tables
@@ -137,19 +116,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `citizen`
 --
 ALTER TABLE `citizen`
-  MODIFY `cid` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `cid` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `criminal`
 --
 ALTER TABLE `criminal`
-  MODIFY `crid` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `crid` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

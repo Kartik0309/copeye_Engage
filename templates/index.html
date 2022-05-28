@@ -4,7 +4,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet" />
 	<link href="/static/css/index_new.css" rel="stylesheet" />
-	<title>Document</title>
+	<title>Home Page</title>
 </head>
 <body>
 	<div class="v17_264">
@@ -21,6 +21,7 @@
 		<div class="v17_207"></div>
 		<div class="v17_208"></div>
 		<div class="v17_209"></div>
+        <div class="tag">
 		<div class="v17_210 box-1"></div>
 		<div class="v17_211"></div>
 		<div class="v17_213 box-1"></div>
@@ -54,26 +55,26 @@
 		<div class="v17_241"></div>
 		<div class="v17_242"></div>
 		<div class="v17_243"></div>
-		<div class="v17_244"></div>
+		<div class="v17_244"></div></div>
 		<span class="v17_246">CopEye</span>
-		<a class="v17_199" href="{{url_for('index')}}"><span class="v17_247">Home</span></a>
-		<a class="v17_202" href="{{url_for('citizen')}}"><span class="v17_248">Add Citizen</span></a>
-		<a class="v17_204" href="{{url_for('about_us')}}"><span class="v17_249">AboutUs</span></a>
-    {%if session['name'] %}
-		<span class="v17_250"><span class='name' style="color:white;">Welcome</span> {{session['name']}}</span>
-    {%endif %}
-    <a class="v17_205" href="{{url_for('login')}}"><span class="v17_251">Log Out</span></a>
+		<a class="v17_199" href="/index"><span class="v17_247">Home</span></a>
+		<a class="v17_202" href="/citizen"><span class="v17_248">Add Citizen</span></a>
+		<a class="v17_204" href="/about_us"><span class="v17_249">AboutUs</span></a>
+    
+		<span class="v17_250"><span class="name" style="color:white;">Welcome</span> {{session['name']}}</span>
+    <a class="v17_205" href="/"><span class="v17_251">Log Out</span></a>
 		<!-- <span class="v17_251">Log Out</span> -->
-		<span class="v17_252">Our Features</span>
+		<div class="tag"><span class="v17_252">Our Features</span>
 		<span class="v17_253">Criminal Detection</span>
 		<span class="v17_254">Update Criminal into database and search for the criminal from live cameras and get alert as soon as they appear in front of any camera.</span>
-		<a class="v17_220" href="{{url_for('criminal')}}"><span class="v17_255">Detect A Criminal</span></a>
+		<a class="v17_220" href="/criminal"><span class="v17_255">Detect A Criminal</span></a>
 		<span class="v17_256">Mask Detection</span>
 		<span class="v17_257">Wearing mask in COVID-19 has been very important.This feature allows to check for the people who are wearing masks and gives a list of people who are not wearing masks.</span>
-    <a class="v17_232" href="{{url_for('facemask')}}"><span class="v17_258">Detect Mask</span></a>
+    <a class="v17_232" href="/facemask"><span class="v17_258">Detect Mask</span></a>
 		<span class="v17_259">Find Missing People</span>
 		<span class="v17_260">This feature gives the option to upload the image of lost person and allows to search for the lost person through live camera and generates alert when the system recognizes the person.</span>
-		<a class="v17_244" href="{{url_for('lost_found')}}"><span class="v17_261">Find Missing People</span></a>
+		<a class="v17_244" href="/lost_found"><span class="v17_261">Find Missing People</span></a></div>
 	</div>
+
 </body>
 </html>

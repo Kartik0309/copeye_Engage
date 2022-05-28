@@ -234,7 +234,7 @@
   }
   .v23_66 {
     width: 100%;
-    height: 1709px;
+    height: 1400px;
     background: rgba(255,255,255,1);
     opacity: 1;
     position: absolute;
@@ -668,39 +668,11 @@
     opacity: 1;
     text-align: left;
   }
-  .v23_50 {
-    width: 415px;
-    color: rgba(0,0,0,1);
-    position: absolute;
-    top: 366px;
-    left: 0px;
-    font-family: Poppins;
-    font-weight: Regular;
-    font-size: 45px;
-    opacity: 1;
-    text-align: left;
+  .v23_28:hover{
+    background-color: white;
+    cursor: pointer;
   }
-  .v23_51 {
-    width: 399px;
-    color: rgba(42,42,42,1);
-    position: absolute;
-    top: 374px;
-    left: 563px;
-    font-family: Poppins;
-    font-weight: Regular;
-    font-size: 20px;
-    opacity: 1;
-    text-align: left;
-  }
-  .v23_52 {
-    width: 789px;
-    color: rgba(79,79,79,1);
-    position: absolute;
-    top: 428px;
-    left: 563px;
-    font-family: PT Serif;
-    font-weight: Regular;
-    font-size: 16px;
-    opacity: 1;
-    text-align: left;
+  .v23_69:hover{
+    cursor: pointer;
+    color:white;
   }

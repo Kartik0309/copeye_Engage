@@ -499,7 +499,7 @@
     width: 319px;
     color: rgba(0,0,0,1);
     position: absolute;
-    top: 11px;
+    top: 5px;
     left: 70px;
     font-family: PT Serif;
     font-weight: Regular;
@@ -519,4 +519,8 @@
     top: 125px;
     left: 0px;
     overflow: hidden;
+  }
+  button.v26_65:hover{
+    cursor: pointer;
+    background-color: white;
   }

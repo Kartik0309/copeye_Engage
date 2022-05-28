@@ -155,11 +155,10 @@ def mask_detect():
 
 		# show the output frame
 		cv2.imshow("Frame", frame)
-		key = cv2.waitKey(1) & 0xFF
+		if cv2.waitKey(1) == 27:
+			break
 
 		# if the `q` key was pressed, break from the loop
-		if key == ord("q"):
-			break
 
 	# do a bit of cleanup
 	nfound=list(dict())

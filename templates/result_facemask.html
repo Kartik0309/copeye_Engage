@@ -1,5 +1,6 @@
 <head>
 	<link rel="stylesheet" href="/static/css/result.css"/>
+	<title>Facemask Result</title>
 </head>
 <body>
 	<div class="nav">
@@ -21,6 +22,11 @@
     {%endif %}
     <a class="v17_205" href="{{url_for('login')}}"><span class="v17_251">Log Out</span></a>
 	</div>
+	{%if found|length==0 %}
+	<div class="new">
+		<h1>No Perosn Without Facemask detected!!</h1>
+	</div>
+	{%endif%}
 	{%if found%}
 	<div class="hero-container">
 	{%for x in found %}
