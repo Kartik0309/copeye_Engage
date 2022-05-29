@@ -3,7 +3,10 @@ import views
 from flask_session import Session
 from flask_mysqldb import MySQL
 
+#Configuring the application
 app=Flask(__name__)
+
+#Configuring the database
 app.config['MYSQL_HOST']='localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
@@ -13,6 +16,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 mysql=MySQL(app)
 Session(app)
 
+#Configuring all the URL'S used in the project
 app.add_url_rule('/','login',views.login,methods=['GET', 'POST'])
 app.add_url_rule('/index','index',views.index)
 app.add_url_rule('/criminal','criminal',views.criminal,methods=['GET', 'POST'])
@@ -28,6 +32,6 @@ app.add_url_rule('/result_facemask','result_facemask',views.result_facemask,meth
 app.add_url_rule('/result_lostfound','result_lostfound',views.result_lostfound,methods=['GET', 'POST'])
 
 
-
+#Staring the application
 if __name__ == '__main__':
     app.run(debug=True)

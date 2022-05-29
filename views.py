@@ -1,3 +1,4 @@
+#Importing Required Libraries
 from flask import render_template,request,redirect,session,abort,Response
 from deepface import DeepFace as DF
 import cv2
@@ -9,25 +10,26 @@ from mask_detection import detect_mask_video
 from flask_mysqldb import MySQL
 from datetime import datetime
 
+#Declaring Necessary Variables
 haar=cv2.CascadeClassifier('static\haarcascade_frontalface_alt.xml')
 FOLDER='static/uploads/citizen'
 FOLDER1='static/uploads/criminal'
 FOLDER2='static/uploads/auth'
 FOLDER3='static/uploads/temp'
 mysql=MySQL()
+
+#Function for Adding a citizen 
 def citizen():
     message=""
     if request.method == 'POST':
         temp=None
         try:
-            print("Hello")
             name=request.form['name']
             age=request.form['age']
             address=request.form['address']
             image=request.files['photo']
             temp=image.filename
             image.save(os.path.join(FOLDER3,image.filename))
-            print('Hello1')
             image=cv2.imread(os.path.join(FOLDER3,image.filename))
             faces=haar.detectMultiScale(image,1.3,5)
             if len(faces)>1:
@@ -57,7 +59,7 @@ def citizen():
     return render_template('citizen.html',message=message)
 
 
-
+#Function to add user into the user database
 def signup():
     message=""
     if request.method=='POST':
@@ -80,7 +82,6 @@ def signup():
                 faces=haar.detectMultiScale(frame,1.3,5)
                 for x,y,w,h in faces:
                     face=frame[y-20:y+h+20,x-20:x+w+20]
-                    #face=np.array(face)
                     face = im.fromarray(face)
                     face.save(path)
                     mysql.connection.commit()
@@ -93,7 +94,7 @@ def signup():
             return render_template('login.html',message=message)   
     return render_template('signup.html')
 
-
+#Function for login of the user using the face recognition
 def login():
     message=""
     if request.method == 'POST':
@@ -138,9 +139,11 @@ def login():
         session.pop('name')
     return render_template('login.html',message=message)
 
+#Function to render the home page
 def index():
     return render_template('index.html')
 
+#Function to search for the criminal from live stream
 def find_criminal():
     if request.method == 'GET':
         return abort(404)
@@ -177,15 +180,19 @@ def find_criminal():
     cur.close()
     return render_template('result_criminal.html',found=found)
 
+#Function to render the result page after the detection of criminal is completed
 def result_criminal():
     return render_template('result_criminal.html',found=None)
 
+#Function to render the result page after the detection of facemask is completed
 def result_facemask():
     return render_template('result_facemask.html',found=None)
 
+#Function to render the result page after the detection of missing citizen is completed
 def result_lostfound():
     return render_template('result_lostfound.html',found=None)
 
+#Function to get the information from the form of Upload Criminal
 def criminal():
     message=""
     if request.method=='POST':
@@ -204,6 +211,7 @@ def criminal():
         return render_template('criminal.html',message=message)   
     return render_template('criminal.html',message=message)
 
+#Function to start the video stream and search for citizens without facemask
 def facemask():
     found=None
     if request.method == 'POST':
@@ -211,6 +219,7 @@ def facemask():
         return render_template('result_facemask.html',found=found)
     return render_template('facemask.html',found=found)
 
+#Function to find the people who have been marked lost
 def find_lost():
     if request.method == 'GET':
         return abort(404)
@@ -250,7 +259,9 @@ def find_lost():
     vid.release()
     return render_template('result_lostfound.html',found=found)
 
+#Function to get the details of the lost citizen and making the necessary changes in database
 def lost_found():
+    message=""
     if request.method=='POST':
         f=request.files['upload']
         filename=request.form['upload-name']
@@ -271,8 +282,10 @@ def lost_found():
                     cur.execute("update citizen set lost=1 where cid='{}';".format(first))
             cur.close()
             mysql.connection.commit()
-        return render_template('lost_found.html',val=True,path=path,found=None)   
-    return render_template('lost_found.html',val=False,path=None,found=None)
+            message="Criminal Added Successfully!!"
+        return render_template('lost_found.html',message=message)   
+    return render_template('lost_found.html',message=message)
 
+#Function to render the about us page
 def about_us():
     return render_template('about_us.html')
