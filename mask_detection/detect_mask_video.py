@@ -139,7 +139,7 @@ def mask_detect():
 					for i in os.listdir('static/uploads/citizen'):
 						last=i.split('.')[-1]
 						first=i.split('.')[0]
-						df=DF.verify(img1_path=face,img2_path=os.path.join('static/uploads/citizen',i),enforce_detection=False,model_name='VGG-Face')
+						df=DF.verify(img1_path=face,img2_path=os.path.join('static/uploads/citizen',i),enforce_detection=False)
 						if df['verified'] and df['distance']<0.3147:
 							found.add(first)					
 
